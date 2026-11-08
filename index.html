@@ -233,6 +233,101 @@
             border-top: 1px solid var(--m-divider); padding-top: 10px;
         }
         .button-group button { padding: 10px; font-size: 12px; border-radius: 8px; border: 1px solid var(--m-border); background: var(--m-chip); color: var(--m-text); font-weight: bold; cursor: pointer; }
+        .button-group .btn-share { grid-column: 1 / -1; background: var(--m-green-rec); border-color: var(--m-green-main); color: var(--m-sort-text); }
+
+        .action-modal-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 100003;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgba(0,0,0,.28);
+        }
+        .action-modal-bg.show { display: flex; }
+        .action-modal {
+            width: min(420px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            box-sizing: border-box;
+            padding: 18px;
+            border: 1px solid var(--m-border);
+            border-radius: 15px;
+            background: var(--m-modal);
+            color: var(--m-text);
+            box-shadow: 0 12px 40px rgba(0,0,0,.24);
+        }
+        .action-modal h4 { margin: 0 0 7px 0; font-size: 16px; }
+        .action-modal p { margin: 0 0 14px 0; color: var(--m-muted); font-size: 12px; line-height: 1.55; }
+        .action-modal .modal-choice {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin-bottom: 9px;
+            border: 1px solid var(--m-border);
+            border-radius: 10px;
+            background: var(--m-card);
+            color: var(--m-text);
+            font-size: 13px;
+            font-weight: bold;
+            text-align: left;
+            cursor: pointer;
+        }
+        .action-modal .modal-choice small { display: block; margin-top: 4px; color: var(--m-soft); font-size: 11px; font-weight: normal; line-height: 1.4; }
+        .action-modal .modal-choice.danger { color: var(--m-warn-text); background: var(--m-warn-bg); border-color: var(--m-warn-border); }
+        .action-modal .modal-cancel { width: 100%; padding: 10px; border: 1px solid var(--m-border); border-radius: 9px; background: var(--m-chip); color: var(--m-muted); font-size: 12px; font-weight: bold; cursor: pointer; }
+        .share-link-row { display: grid; grid-template-columns: 1fr auto; gap: 7px; margin-bottom: 9px; }
+        .share-link-row input { font-size: 11px; }
+        .share-link-row button, .share-modal-actions button { padding: 9px 12px; border: 1px solid var(--m-border); border-radius: 8px; background: var(--m-card); color: var(--m-text); font-size: 12px; font-weight: bold; cursor: pointer; white-space: nowrap; }
+        .share-modal-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 9px; }
+        .share-modal-actions .primary { background: var(--m-green-main); border-color: var(--m-green-main); color: var(--m-on-accent); }
+        .share-note { padding: 9px 10px; border-radius: 8px; background: var(--m-status); color: var(--m-muted); font-size: 11px; line-height: 1.5; }
+
+        #publicShareView { display: none; max-width: 880px; margin: 0 auto; }
+        body.public-view-active > :not(#publicShareView):not(script) { display: none !important; }
+        body.public-view-active { padding: 0; background: var(--m-bg); }
+        body.public-view-active #publicShareView { display: block; }
+        .public-shell { min-height: 100vh; padding: 18px 14px 34px; box-sizing: border-box; }
+        .public-hero {
+            padding: 19px;
+            border: 1px solid var(--m-border);
+            border-radius: 16px;
+            background: var(--m-card);
+            box-shadow: 0 5px 20px var(--m-shadow);
+        }
+        .public-kicker { margin: 0 0 6px 0; color: var(--m-green-main); font-size: 11px; font-weight: bold; letter-spacing: .08em; }
+        .public-title { margin: 0; font-size: clamp(22px, 6vw, 30px); color: var(--m-text); overflow-wrap: anywhere; }
+        .public-subtitle { margin: 7px 0 0 0; color: var(--m-muted); font-size: 12px; line-height: 1.5; }
+        .public-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 15px; }
+        .public-stat { padding: 10px 8px; border-radius: 10px; background: var(--m-panel); border: 1px solid var(--m-divider); text-align: center; }
+        .public-stat strong { display: block; font-size: 19px; color: var(--m-text); }
+        .public-stat span { display: block; margin-top: 2px; font-size: 10px; color: var(--m-soft); }
+        .public-tools { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin: 14px 0 8px; }
+        .public-tools input { margin: 0; }
+        .public-tools button { padding: 0 14px; border: 1px solid var(--m-border); border-radius: 8px; background: var(--m-chip); color: var(--m-muted); font-weight: bold; cursor: pointer; }
+        .public-grid-wrap { padding: 14px; border: 1px solid var(--m-border); border-radius: 15px; background: var(--m-card); box-shadow: 0 4px 16px var(--m-shadow); }
+        .public-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 8px; }
+        .public-num-card {
+            min-height: 58px;
+            padding: 7px 5px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            border: 1px solid var(--m-border);
+            border-radius: 9px;
+            background: var(--m-panel);
+            color: var(--m-soft);
+            text-align: center;
+        }
+        .public-num-card.occupied { border-color: var(--m-blue-main); background: var(--m-green-rec); color: var(--m-text); }
+        .public-num { font-size: 17px; line-height: 1; font-weight: bold; }
+        .public-owner { width: 100%; font-size: 10px; line-height: 1.25; overflow-wrap: anywhere; }
+        .public-empty { grid-column: 1 / -1; padding: 28px 12px; color: var(--m-soft); text-align: center; font-size: 13px; }
+        .public-footer { margin-top: 14px; color: var(--m-footer); text-align: center; font-size: 10px; line-height: 1.5; }
 
         .pool-box { background: var(--m-card); padding: 18px; border-radius: 15px; box-shadow: 0 4px 12px var(--m-shadow); }
         .scroll-area { max-height: 40vh; overflow-y: auto; margin-top: 10px; -webkit-overflow-scrolling: touch; }
@@ -423,6 +518,62 @@
     </div>
 </div>
 
+<div id="resetBatchModal" class="action-modal-bg" onclick="closeResetBatchModal(event)">
+    <div class="action-modal" onclick="event.stopPropagation()">
+        <h4>重置本档</h4>
+        <p>请选择要清空的内容。档位名称和号码范围会保留。</p>
+        <button type="button" class="modal-choice" onclick="resetCurrentBatch(false)">
+            仅重置本档数字
+            <small>清空所有号码归属，保留顾客清单。</small>
+        </button>
+        <button type="button" class="modal-choice danger" onclick="resetCurrentBatch(true)">
+            重置本档数字 + 顾客清单
+            <small>同时清空号码归属和本档全部顾客。</small>
+        </button>
+        <button type="button" class="modal-cancel" onclick="closeResetBatchModal()">取消</button>
+    </div>
+</div>
+
+<div id="shareModal" class="action-modal-bg" onclick="closeShareModal(event)">
+    <div class="action-modal" onclick="event.stopPropagation()">
+        <h4>顾客查看链接</h4>
+        <p>这是当前档位的只读快照，只包含档名、号码范围和顾客归属，不包含其他档位或 AI 设置。</p>
+        <div class="share-link-row">
+            <input id="shareLinkInput" type="text" readonly aria-label="顾客查看链接" onclick="this.select()">
+            <button type="button" onclick="copyShareLink()">复制</button>
+        </div>
+        <div class="share-modal-actions">
+            <button type="button" class="primary" onclick="shareCustomerLink()">分享给顾客</button>
+            <button type="button" onclick="previewShareLink()">打开预览</button>
+        </div>
+        <div class="share-note">链接是生成时的快照，数据修改后需要重新生成。长链接可以直接发到聊天群，手机点击后会打开只读号码表。</div>
+        <button type="button" class="modal-cancel" style="margin-top:9px;" onclick="closeShareModal()">关闭</button>
+    </div>
+</div>
+
+<div id="publicShareView">
+    <main class="public-shell">
+        <section class="public-hero">
+            <p class="public-kicker">KAKI · 号码归属查询</p>
+            <h1 id="publicBatchTitle" class="public-title">档位</h1>
+            <p class="public-subtitle">查看当前档位中每个号码的归属。此页面为只读快照。</p>
+            <div class="public-stats">
+                <div class="public-stat"><strong id="publicTotalCount">0</strong><span>号码范围</span></div>
+                <div class="public-stat"><strong id="publicSoldCount">0</strong><span>已占用</span></div>
+                <div class="public-stat"><strong id="publicRemainingCount">0</strong><span>剩余</span></div>
+            </div>
+        </section>
+        <div class="public-tools">
+            <input id="publicSearch" type="search" placeholder="输入号码或顾客名快速查找" oninput="filterPublicNumbers()">
+            <button type="button" onclick="clearPublicSearch()">清除</button>
+        </div>
+        <section class="public-grid-wrap">
+            <div id="publicNumberGrid" class="public-grid"></div>
+        </section>
+        <div class="public-footer">只读分享页 · 数据更新后请以商家重新发送的链接为准</div>
+    </main>
+</div>
+
 <div class="toolbar" style="margin-top:46px;">
     <div class="batch-tabs">
         <button class="add-tab-btn" onclick="addNewBatch()">+ 新档位</button>
@@ -442,8 +593,9 @@
     </div>
 
     <div class="button-group">
-        <button onclick="resetSoldStatus()">重置本档数字</button>
+        <button onclick="openResetBatchModal()">重置本档</button>
         <button style="background:var(--m-warn-bg);border-color:var(--m-warn-border);color:var(--m-warn-text);" onclick="initSystem()">清空所有档位</button>
+        <button class="btn-share" onclick="openShareModal()">🔗 生成顾客查看链接</button>
     </div>
 </div>
 
@@ -461,7 +613,7 @@
 
 <div style="background:var(--m-card); padding:18px; border-radius:15px; box-shadow:0 4px 12px var(--m-shadow); margin-top:12px;">
     <div class="list-header">
-        <h4 class="list-header-title">顾客清单 <small class="cust-edit-hint">点击名字可修改</small></h4>
+        <h4 class="list-header-title">顾客清单 <small class="cust-edit-hint">双击名字可修改</small></h4>
         <div class="list-header-actions">
             <button class="sort-btn" onclick="sortAllCustomerNums()">一键排序</button>
             <button class="copy-btn" onclick="toggleAiPanel()">AI导入</button>
@@ -589,6 +741,9 @@
     let editingCustomerIndex = null;
     let editingAiResultIndex = null;
     let viewingAiImageIndex = -1;
+    let lastNameTapIndex = -1;
+    let lastNameTapAt = 0;
+    let publicShareData = null;
 
     const defaultAiPrompt = `【代理归属提取 v7】
 你是聊天记录截图的信息提取助手。括号里的名字是好友备注，必须忽略；只使用用户自己在群里显示的昵称。
@@ -739,6 +894,169 @@
         alert("已复制！");
     }
 
+    function openResetBatchModal() {
+        document.getElementById('shareModal').classList.remove('show');
+        document.getElementById('resetBatchModal').classList.add('show');
+    }
+
+    function closeResetBatchModal(event) {
+        if(event && event.target?.id !== 'resetBatchModal') return;
+        document.getElementById('resetBatchModal').classList.remove('show');
+    }
+
+    function resetCurrentBatch(clearCustomers) {
+        const current = batches[currentIdx];
+        current.customers.forEach(customer => { customer.nums = []; });
+        if(clearCustomers) current.customers = [];
+        selectedNums = [];
+        editingCustomerIndex = null;
+        closeResetBatchModal();
+        renderAll();
+        save();
+    }
+
+    function bytesToBase64Url(bytes) {
+        let binary = '';
+        const chunkSize = 0x8000;
+        for(let i = 0; i < bytes.length; i += chunkSize) {
+            binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+        }
+        return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+    }
+
+    function base64UrlToBytes(value) {
+        const padded = value.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - value.length % 4) % 4);
+        const binary = atob(padded);
+        const bytes = new Uint8Array(binary.length);
+        for(let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        return bytes;
+    }
+
+    function encodePublicBatch(batch) {
+        const customers = batch.customers.map(customer => {
+            const nums = [...new Set(customer.nums.flat().map(Number).filter(num =>
+                Number.isInteger(num) && num >= 1 && num <= batch.total
+            ))].sort((a, b) => a - b);
+            return nums.length ? [customer.name, nums] : null;
+        }).filter(Boolean);
+        const payload = { v: 1, n: batch.id, t: batch.total, c: customers };
+        return bytesToBase64Url(new TextEncoder().encode(JSON.stringify(payload)));
+    }
+
+    function decodePublicBatch(value) {
+        try {
+            const data = JSON.parse(new TextDecoder().decode(base64UrlToBytes(value)));
+            const total = Number(data.t);
+            if(data.v !== 1 || !Number.isInteger(total) || total < 1 || total > 1000 || !Array.isArray(data.c)) return null;
+            const customers = data.c.map(item => {
+                if(!Array.isArray(item) || item.length !== 2) return null;
+                const name = String(item[0] || '').trim().slice(0, 60);
+                const nums = [...new Set((Array.isArray(item[1]) ? item[1] : []).map(Number).filter(num =>
+                    Number.isInteger(num) && num >= 1 && num <= total
+                ))].sort((a, b) => a - b);
+                return name && nums.length ? { name, nums } : null;
+            }).filter(Boolean);
+            return { id: String(data.n || '未命名档位').trim().slice(0, 80), total, customers };
+        } catch(error) {
+            return null;
+        }
+    }
+
+    function buildCustomerShareLink() {
+        const baseUrl = location.href.split('#')[0];
+        return `${baseUrl}#customers=${encodePublicBatch(batches[currentIdx])}`;
+    }
+
+    function openShareModal() {
+        const occupied = new Set(batches[currentIdx].customers.flatMap(customer => customer.nums.flat())).size;
+        if(!occupied) {
+            alert('当前档位还没有已占用的号码，暂时没有可分享的归属记录。');
+            return;
+        }
+        document.getElementById('resetBatchModal').classList.remove('show');
+        document.getElementById('shareLinkInput').value = buildCustomerShareLink();
+        document.getElementById('shareModal').classList.add('show');
+    }
+
+    function closeShareModal(event) {
+        if(event && event.target?.id !== 'shareModal') return;
+        document.getElementById('shareModal').classList.remove('show');
+    }
+
+    function copyShareLink() {
+        const link = document.getElementById('shareLinkInput').value;
+        if(!link) return;
+        copyText(link);
+    }
+
+    async function shareCustomerLink() {
+        const link = document.getElementById('shareLinkInput').value;
+        if(!link) return;
+        if(navigator.share) {
+            try {
+                await navigator.share({
+                    title: `${batches[currentIdx].id} · 号码归属查询`,
+                    text: `查看【${batches[currentIdx].id}】的号码归属`,
+                    url: link
+                });
+                return;
+            } catch(error) {
+                if(error?.name === 'AbortError') return;
+            }
+        }
+        copyText(link);
+    }
+
+    function previewShareLink() {
+        const link = document.getElementById('shareLinkInput').value;
+        if(link) window.open(link, '_blank', 'noopener');
+    }
+
+    function filterPublicNumbers() {
+        const query = document.getElementById('publicSearch').value.trim().toLowerCase();
+        document.querySelectorAll('#publicNumberGrid .public-num-card').forEach(card => {
+            const matches = !query || card.dataset.number.includes(query) || (card.dataset.owner || '').toLowerCase().includes(query);
+            card.style.display = matches ? '' : 'none';
+        });
+    }
+
+    function clearPublicSearch() {
+        document.getElementById('publicSearch').value = '';
+        filterPublicNumbers();
+    }
+
+    function renderPublicView(data) {
+        publicShareData = data;
+        document.body.classList.add('public-view-active');
+        document.getElementById('publicBatchTitle').textContent = data.id;
+        document.getElementById('publicTotalCount').textContent = data.total;
+        const ownerByNumber = new Map();
+        data.customers.forEach(customer => customer.nums.forEach(num => ownerByNumber.set(num, customer.name)));
+        document.getElementById('publicSoldCount').textContent = ownerByNumber.size;
+        document.getElementById('publicRemainingCount').textContent = Math.max(0, data.total - ownerByNumber.size);
+
+        const grid = document.getElementById('publicNumberGrid');
+        const cards = [];
+        for(let num = 1; num <= data.total; num++) {
+            const owner = ownerByNumber.get(num);
+            cards.push(`
+                <div class="public-num-card ${owner ? 'occupied' : ''}" data-number="${num}" data-owner="${escapeAiHtml(owner || '')}">
+                    <span class="public-num">${num}</span>
+                    <span class="public-owner">${owner ? escapeAiHtml(owner) : '未占用'}</span>
+                </div>
+            `);
+        }
+        grid.innerHTML = cards.join('');
+    }
+
+    function renderPublicViewError() {
+        document.body.classList.add('public-view-active');
+        document.getElementById('publicBatchTitle').textContent = '链接无法读取';
+        document.querySelector('.public-subtitle').textContent = '分享链接可能不完整，请让商家重新发送。';
+        document.getElementById('publicNumberGrid').innerHTML = '<div class="public-empty">没有可显示的号码数据。</div>';
+        document.getElementById('publicSearch').disabled = true;
+    }
+
     function copyRemaining() {
         const b = batches[currentIdx];
         const sold = b.customers.flatMap(c => c.nums.flat());
@@ -760,6 +1078,19 @@
         input.value = '';
         renderAll();
         save();
+    }
+
+    function handleCustomerNameTap(event, idx) {
+        event.stopPropagation();
+        const now = Date.now();
+        if(lastNameTapIndex === idx && now - lastNameTapAt <= 450) {
+            lastNameTapIndex = -1;
+            lastNameTapAt = 0;
+            startEditCustomerName(idx);
+            return;
+        }
+        lastNameTapIndex = idx;
+        lastNameTapAt = now;
     }
 
     function startEditCustomerName(idx) {
@@ -856,7 +1187,6 @@
     function deleteCustomer(idx) { if(confirm(`彻底删除顾客 ${batches[currentIdx].customers[idx].name}？`)) { batches[currentIdx].customers.splice(idx, 1); renderAll(); save(); } }
 
     function initSystem() { if(confirm("警告：这将清空所有档位的所有数据！")) { batches = [{ id: '默认档', customers: [], total: 50 }]; currentIdx = 0; renderAll(); save(); } }
-    function resetSoldStatus() { if(confirm("清空本档所有数字绑定？")) { batches[currentIdx].customers.forEach(c => c.nums = []); renderAll(); save(); } }
 
     function renderAll() {
         document.getElementById('totalNum').value = batches[currentIdx].total;
@@ -898,7 +1228,7 @@
             ).join('<span style="color:var(--m-soft);margin:0 5px;">|</span>');
             const nameEditor = editingCustomerIndex === cIdx
                 ? `<input type="text" id="customerNameEditor" class="cust-name-input" maxlength="60" value="${escapeAiHtml(c.name)}" placeholder="输入用户名" onclick="event.stopPropagation()" onkeydown="handleCustomerNameKey(event, ${cIdx})" onblur="finishCustomerNameEdit(${cIdx}, true)">`
-                : `<button type="button" class="cust-name-btn" onclick="event.stopPropagation(); startEditCustomerName(${cIdx})" title="点击修改用户名">👤 ${escapeAiHtml(c.name)}</button>`;
+                : `<button type="button" class="cust-name-btn" onclick="handleCustomerNameTap(event, ${cIdx})" title="双击修改用户名">👤 ${escapeAiHtml(c.name)}</button>`;
 
             card.innerHTML = `
                 <div class="cust-header">
@@ -1208,11 +1538,11 @@
             if(!count) {
                 pushAiTrace('没有生成可新增的编号，请展开识别记录校对或检查当前档位是否已有数据。', 'warn');
                 setAiStatus(occupiedBefore
-                    ? `识别完成，但本次没有可新增的编号。当前档位原有 ${occupiedBefore} 个编号已优先保留；如果只是重复测试，请先点“重置本档数字”再识图。`
+                    ? `识别完成，但本次没有可新增的编号。当前档位原有 ${occupiedBefore} 个编号已优先保留；如果只是重复测试，请先点“重置本档”并选择“仅重置本档数字”再识图。`
                     : '识别完成，但没有提取到有效编号。请展开“识别记录校对”检查昵称与编号，或检查截图清晰度。');
                 return;
             }
-            setAiStatus(`识别完成：${aiResults.length} 个用户、共 ${count} 个编号，已按消息时间递增整理。` + (proxyTotal ? `其中 ${proxyTotal} 个编号已识别为帮抢。` : '') + (pendingNameCount ? `有 ${pendingNameCount} 位空白名或未识别用户名需要先命名。` : '') + (aiConflicts.length ? `有 ${aiConflicts.length} 个编号被多人重复发送，已按时间更早者优先。` : '') + (occupiedBefore ? `当前档位原有 ${occupiedBefore} 个编号会继续优先保留；如果只是重复测试，请先点“重置本档数字”。` : '') + '请先展开校对表核对，再点击导入。');
+            setAiStatus(`识别完成：${aiResults.length} 个用户、共 ${count} 个编号，已按消息时间递增整理。` + (proxyTotal ? `其中 ${proxyTotal} 个编号已识别为帮抢。` : '') + (pendingNameCount ? `有 ${pendingNameCount} 位空白名或未识别用户名需要先命名。` : '') + (aiConflicts.length ? `有 ${aiConflicts.length} 个编号被多人重复发送，已按时间更早者优先。` : '') + (occupiedBefore ? `当前档位原有 ${occupiedBefore} 个编号会继续优先保留；如果只是重复测试，请先点“重置本档”并选择“仅重置本档数字”。` : '') + '请先展开校对表核对，再点击导入。');
         } catch(err) {
             pushAiTrace(`识别失败：${err.message}`, 'warn');
             setAiStatus(`识别失败：${err.message}`);
@@ -1989,7 +2319,13 @@
         addAiImageFiles(event.dataTransfer.files);
     });
 
-    renderAll();
+    if(location.hash.startsWith('#customers=')) {
+        const sharedBatch = decodePublicBatch(location.hash.slice('#customers='.length));
+        if(sharedBatch) renderPublicView(sharedBatch);
+        else renderPublicViewError();
+    } else {
+        renderAll();
+    }
 </script>
 </body>
 </html>
