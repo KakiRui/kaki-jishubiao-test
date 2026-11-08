@@ -782,6 +782,15 @@
         .public-num { font-size: 17px; line-height: 1; font-weight: bold; }
         .public-owner { width: 100%; font-size: 10px; line-height: 1.25; overflow-wrap: anywhere; }
         .public-empty { grid-column: 1 / -1; padding: 28px 12px; color: var(--m-soft); text-align: center; font-size: 13px; }
+        .public-customer-section { margin-top: 14px; padding: 14px; border: 1px solid var(--m-border); border-radius: 15px; background: var(--m-card); box-shadow: 0 4px 16px var(--m-shadow); }
+        .public-customer-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+        .public-customer-heading h2 { margin: 0; font-size: 15px; color: var(--m-text); }
+        .public-customer-heading span { font-size: 10px; color: var(--m-soft); }
+        .public-customer-list { display: grid; gap: 8px; }
+        .public-customer-card { padding: 10px 11px; border: 1px solid var(--m-divider); border-radius: 10px; background: var(--m-panel); }
+        .public-customer-name { margin-bottom: 7px; font-size: 13px; font-weight: bold; color: var(--m-text); overflow-wrap: anywhere; }
+        .public-customer-nums { display: flex; flex-wrap: wrap; gap: 5px; }
+        .public-customer-num { padding: 2px 7px; border-radius: 6px; background: var(--m-green-rec); color: var(--m-sort-text); font-size: 11px; }
         .public-footer { margin-top: 14px; color: var(--m-footer); text-align: center; font-size: 10px; line-height: 1.5; }
 
         .pool-box { background: var(--m-card); padding: 18px; border-radius: 15px; box-shadow: 0 4px 12px var(--m-shadow); }
@@ -1031,6 +1040,13 @@
         </div>
         <section class="public-grid-wrap">
             <div id="publicNumberGrid" class="public-grid"></div>
+        </section>
+        <section class="public-customer-section">
+            <div class="public-customer-heading">
+                <h2>顾客清单</h2>
+                <span>仅显示已有号码的顾客</span>
+            </div>
+            <div id="publicCustomerList" class="public-customer-list"></div>
         </section>
         <div class="public-footer">只读分享页 · 数据更新后请以重新发送的链接为准</div>
     </main>
@@ -1487,6 +1503,10 @@
             const matches = !query || card.dataset.number.includes(query) || (card.dataset.owner || '').toLowerCase().includes(query);
             card.style.display = matches ? '' : 'none';
         });
+        document.querySelectorAll('#publicCustomerList .public-customer-card').forEach(card => {
+            const matches = !query || card.dataset.search.includes(query);
+            card.style.display = matches ? '' : 'none';
+        });
     }
 
     function clearPublicSearch() {
@@ -1515,6 +1535,17 @@
             `);
         }
         grid.innerHTML = cards.join('');
+        const customerList = document.getElementById('publicCustomerList');
+        const customers = data.customers.slice().sort((a, b) => Math.min(...a.nums) - Math.min(...b.nums));
+        customerList.innerHTML = customers.length ? customers.map(customer => `
+            <article class="public-customer-card" data-search="${escapeAiHtml(`${customer.name} ${customer.nums.join(' ')}`.toLowerCase())}">
+                <div class="public-customer-name">${escapeAiHtml(customer.name)}</div>
+                <div class="public-customer-nums">${customer.nums.map(num => `<span class="public-customer-num">${num}</span>`).join('')}</div>
+            </article>
+        `).join('') : '<div class="public-empty">当前没有顾客号码记录。</div>';
+
+        const customerCount = document.querySelector('.public-customer-heading span');
+        if(customerCount) customerCount.textContent = `${customers.length} 位顾客 · 仅显示已有号码`;
     }
 
     function renderPublicViewError() {
@@ -1522,6 +1553,7 @@
         document.getElementById('publicBatchTitle').textContent = '链接无法读取';
         document.querySelector('.public-subtitle').textContent = '分享链接可能不完整，请让商家重新发送。';
         document.getElementById('publicNumberGrid').innerHTML = '<div class="public-empty">没有可显示的号码数据。</div>';
+        document.getElementById('publicCustomerList').innerHTML = '<div class="public-empty">没有可显示的顾客数据。</div>';
         document.getElementById('publicSearch').disabled = true;
     }
 
