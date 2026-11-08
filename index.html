@@ -794,7 +794,8 @@
         updateThemeOptions();
         closeThemeModal();
     }
-    changeTheme(localStorage.getItem('kaki_theme') || 'cream');
+    const savedTheme = localStorage.getItem('kaki_theme');
+    changeTheme(savedTheme === 'dark' ? 'dark' : 'cream');
 
     function saveAiCfg() {
         aiCfg.endpoint = document.getElementById('aiEndpoint').value.trim();
