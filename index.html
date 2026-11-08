@@ -83,6 +83,123 @@
             --m-remove-bg: rgba(0, 0, 0, 0.55);
         }
 
+        :root[data-theme="pinkblue"] {
+            --m-bg: #fcfeff;
+            --m-text: #52677c;
+            --m-border: #d8e7f2;
+            --m-blue-main: #86bce3;
+            --m-green-main: #86bce3;
+            --m-yellow-act: #fff0f7;
+            --m-green-rec: #f3fafe;
+            --m-danger: #b1748b;
+            --m-card: #ffffff;
+            --m-panel: #f3faff;
+            --m-input: #ffffff;
+            --m-chip: #f2f8fc;
+            --m-muted: #8397aa;
+            --m-soft: #a3b3c1;
+            --m-btn: #f7fbfd;
+            --m-sort: #fff5f9;
+            --m-sort-border: #f1dbe5;
+            --m-sort-text: #9a7787;
+            --m-tip: rgba(255, 255, 255, 0.97);
+            --m-sold: #f0f4f8;
+            --m-sold-border: #e1e9f0;
+            --m-sold-text: #aab5c0;
+            --m-footer: #d6e1ea;
+            --m-status: #f6fbff;
+            --m-badge: #fff1f7;
+            --m-warn-bg: #fff1f6;
+            --m-warn-text: #a36c81;
+            --m-warn-border: #f5d9e4;
+            --m-divider: #edf5fa;
+            --m-tag-hover: #f8dce8;
+            --m-upload-bg: #ffffff;
+            --m-mini: #f7fbff;
+            --m-modal: #ffffff;
+            --m-shadow: rgba(112, 145, 173, 0.08);
+            --m-on-accent: #ffffff;
+            --m-remove-bg: rgba(79, 100, 121, 0.56);
+        }
+
+        :root[data-theme="caramel"] {
+            --m-bg: #fffaf2;
+            --m-text: #5c4a38;
+            --m-border: #e4d2b9;
+            --m-blue-main: #bd884a;
+            --m-green-main: #a2682f;
+            --m-yellow-act: #f6e3b4;
+            --m-green-rec: #fbf0dc;
+            --m-danger: #a56f55;
+            --m-card: #fffdf9;
+            --m-panel: #fbf2e1;
+            --m-input: #fffdf8;
+            --m-chip: #f5e8d3;
+            --m-muted: #8c7963;
+            --m-soft: #ac9a84;
+            --m-btn: #f7ecda;
+            --m-sort: #faefd4;
+            --m-sort-border: #e8d4aa;
+            --m-sort-text: #87663e;
+            --m-tip: rgba(255, 252, 246, 0.97);
+            --m-sold: #ece2d3;
+            --m-sold-border: #ddcfba;
+            --m-sold-text: #ac9e8b;
+            --m-footer: #c9baa6;
+            --m-status: #fcf1d9;
+            --m-badge: #f5e6c9;
+            --m-warn-bg: #f6e4d6;
+            --m-warn-text: #8a5e48;
+            --m-warn-border: #e4c8b3;
+            --m-divider: #eee1cd;
+            --m-tag-hover: #b98855;
+            --m-upload-bg: #fffdf8;
+            --m-mini: #faf1e1;
+            --m-modal: #fffdf9;
+            --m-shadow: rgba(91, 72, 49, 0.10);
+            --m-on-accent: #fffdf7;
+            --m-remove-bg: rgba(92, 74, 58, 0.56);
+        }
+
+        :root[data-theme="brownie"] {
+            --m-bg: #f4ebe5;
+            --m-text: #4c3b34;
+            --m-border: #c6afa4;
+            --m-blue-main: #8d6a5e;
+            --m-green-main: #78584d;
+            --m-yellow-act: #dcc8bd;
+            --m-green-rec: #eee2dc;
+            --m-danger: #8b5c51;
+            --m-card: #fff9f5;
+            --m-panel: #ebddd6;
+            --m-input: #fffbf8;
+            --m-chip: #e5d7d0;
+            --m-muted: #7c6860;
+            --m-soft: #9a867d;
+            --m-btn: #f1e6e0;
+            --m-sort: #dfd4cd;
+            --m-sort-border: #c2b0a7;
+            --m-sort-text: #67574f;
+            --m-tip: rgba(255, 250, 247, 0.97);
+            --m-sold: #dbc9c0;
+            --m-sold-border: #cbb8ae;
+            --m-sold-text: #98847b;
+            --m-footer: #ad988f;
+            --m-status: #f1e5df;
+            --m-badge: #e6d5cd;
+            --m-warn-bg: #ead7d1;
+            --m-warn-text: #80564d;
+            --m-warn-border: #d5b9b1;
+            --m-divider: #e2d4cd;
+            --m-tag-hover: #bea095;
+            --m-upload-bg: #fff9f5;
+            --m-mini: #f2e7e1;
+            --m-modal: #fff9f5;
+            --m-shadow: rgba(69, 50, 43, 0.12);
+            --m-on-accent: #fff9f5;
+            --m-remove-bg: rgba(69, 50, 43, 0.58);
+        }
+
         /* 暗黑模式：数字卡明暗对比加强 */
         :root[data-theme="dark"] .num-card {
             background: #1a2025;
@@ -160,6 +277,342 @@
             color: #c0cad1;
         }
 
+        /* 盐砂糖：柔和粉蓝层级与淡樱粉强调色 */
+        :root[data-theme="pinkblue"] body {
+            background: linear-gradient(145deg, #e6f5ff 0%, #ffffff 50%, #fff0f6 100%);
+            background-attachment: fixed;
+        }
+        :root[data-theme="pinkblue"] .num-card {
+            background: #f7fcff;
+            border-color: #c5e0f1;
+            color: #668eac;
+        }
+        :root[data-theme="pinkblue"] .num-card.selected {
+            background: #fff0f7;
+            border-color: #f1cadb;
+            color: #4f6479;
+        }
+        :root[data-theme="pinkblue"] .num-card.sold {
+            background: #f0f4f8;
+            border-color: #e1e9f0;
+            color: #a1adba;
+        }
+        :root[data-theme="pinkblue"] .btn-clear {
+            background: #fff4f8 !important;
+            color: #9a7a89 !important;
+            border: 1px solid #f3dae5 !important;
+        }
+        :root[data-theme="pinkblue"] .tab {
+            background: #eef5fb;
+            color: #7c92a5;
+            border: 1px solid transparent;
+        }
+        :root[data-theme="pinkblue"] .tab.active {
+            background: #82b9df;
+            color: #ffffff;
+            border-color: #72aad3;
+            box-shadow: 0 2px 8px rgba(100, 137, 168, 0.18);
+        }
+        :root[data-theme="pinkblue"] .add-tab-btn {
+            background: #fffafd;
+            color: #b88ca0;
+            border-color: #ecc6d6;
+        }
+        :root[data-theme="pinkblue"] .sort-btn {
+            background: #fff5f9;
+            color: #9a7787;
+            border: 1px solid #f1dbe5;
+        }
+        :root[data-theme="pinkblue"] .ai-status {
+            background: #f6fbff;
+            border: 1px solid #d3e6f2;
+            color: #54728b;
+        }
+        :root[data-theme="pinkblue"] .ai-num {
+            background: #eff9ff;
+            color: #547f9d;
+            border: 1px solid #cee5f3;
+        }
+        :root[data-theme="pinkblue"] .ai-num.warn {
+            background: #fff1f6;
+            color: #a36c81;
+            border-color: #f5d9e4;
+        }
+        :root[data-theme="pinkblue"] .api-config,
+        :root[data-theme="pinkblue"] details.prompt-box,
+        :root[data-theme="pinkblue"] .ai-switch,
+        :root[data-theme="pinkblue"] .ai-trace-box,
+        :root[data-theme="pinkblue"] .ai-record-box,
+        :root[data-theme="pinkblue"] .ai-preview-card {
+            background: #ffffff;
+            border-color: #d8e7f2;
+        }
+        :root[data-theme="pinkblue"] .api-toggle,
+        :root[data-theme="pinkblue"] .mini-btn {
+            background: #f7fbff;
+            border-color: #d3e6f2;
+            color: #5f7b93;
+        }
+        :root[data-theme="pinkblue"] .customer-card.can-receive {
+            background: #fff8fb;
+            border-color: #eec7d7;
+        }
+        :root[data-theme="pinkblue"] .tag {
+            background: #fdeef5;
+            color: #7a5666;
+            box-shadow: inset 0 0 0 1px #dcb3c7;
+        }
+        :root[data-theme="pinkblue"] .tag:hover {
+            background: #f8dce8;
+        }
+        :root[data-theme="pinkblue"] .theme-option.active {
+            background: #fff3f8;
+            border-color: #e5bdce;
+        }
+        :root[data-theme="pinkblue"] .theme-btn {
+            background: #fffafd;
+            border-color: #e7c6d6;
+        }
+        :root[data-theme="pinkblue"] .ai-badge {
+            background: #fff1f7;
+            color: #9a7787;
+        }
+        :root[data-theme="pinkblue"] .cust-count-badge {
+            background: #e7f5ff !important;
+            color: #5e87a5 !important;
+        }
+        :root[data-theme="pinkblue"] .ai-image-seq,
+        :root[data-theme="pinkblue"] .ai-image-quality {
+            background: rgba(75, 110, 139, 0.84);
+        }
+        :root[data-theme="pinkblue"] .ai-image-viewer {
+            background: rgba(43, 65, 84, 0.72);
+        }
+
+        /* 焦糖布蕾：奶黄主色、焦糖棕与白色点缀 */
+        :root[data-theme="caramel"] body {
+            background: linear-gradient(145deg, #fffaf0 0%, #fcf2dd 52%, #f4e3c5 100%);
+            background-attachment: fixed;
+        }
+        :root[data-theme="caramel"] .num-card {
+            background: #fff8e8;
+            border-color: #d8bb86;
+            color: #9d7542;
+        }
+        :root[data-theme="caramel"] .num-card.selected {
+            background: #f4dc9a;
+            border-color: #d5b05e;
+            color: #5c4a38;
+        }
+        :root[data-theme="caramel"] .num-card.sold {
+            background: #ece2d3;
+            border-color: #ddcfba;
+            color: #ac9e8b;
+        }
+        :root[data-theme="caramel"] .btn-clear {
+            background: #f8ecd6 !important;
+            color: #8b6b47 !important;
+            border: 1px solid #ead7b2 !important;
+        }
+        :root[data-theme="caramel"] .tab {
+            background: #f2e7d3;
+            color: #8b7863;
+            border: 1px solid transparent;
+        }
+        :root[data-theme="caramel"] .tab.active {
+            background: #a2682f;
+            color: #ffffff;
+            border-color: #8e5725;
+            box-shadow: 0 2px 8px rgba(91, 72, 49, 0.18);
+        }
+        :root[data-theme="caramel"] .add-tab-btn {
+            background: #fffdf7;
+            color: #a57a45;
+            border-color: #d9b476;
+        }
+        :root[data-theme="caramel"] .sort-btn {
+            background: #faefd4;
+            color: #87663e;
+            border: 1px solid #e8d4aa;
+        }
+        :root[data-theme="caramel"] .ai-status {
+            background: #fcf1d9;
+            border: 1px solid #ead4ac;
+            color: #6b563f;
+        }
+        :root[data-theme="caramel"] .ai-num {
+            background: #f8eccd;
+            color: #876136;
+            border: 1px solid #e8cc93;
+        }
+        :root[data-theme="caramel"] .ai-num.warn {
+            background: #f6e4d6;
+            color: #8a5e48;
+            border-color: #e4c8b3;
+        }
+        :root[data-theme="caramel"] .api-config,
+        :root[data-theme="caramel"] details.prompt-box,
+        :root[data-theme="caramel"] .ai-switch,
+        :root[data-theme="caramel"] .ai-trace-box,
+        :root[data-theme="caramel"] .ai-record-box,
+        :root[data-theme="caramel"] .ai-preview-card {
+            background: #fffdf9;
+            border-color: #e4d2b9;
+        }
+        :root[data-theme="caramel"] .api-toggle,
+        :root[data-theme="caramel"] .mini-btn {
+            background: #faf1e1;
+            border-color: #e3cfae;
+            color: #7c6549;
+        }
+        :root[data-theme="caramel"] .customer-card.can-receive {
+            background: #fff7e4;
+            border-color: #dfbe82;
+        }
+        :root[data-theme="caramel"] .tag {
+            background: #f5e8d2;
+            color: #7b6145;
+            box-shadow: inset 0 0 0 1px #e2cfae;
+        }
+        :root[data-theme="caramel"] .tag:hover {
+            background: #efe0c6;
+        }
+        :root[data-theme="caramel"] .theme-option.active {
+            background: #fff7e6;
+            border-color: #d6b16d;
+        }
+        :root[data-theme="caramel"] .theme-btn {
+            background: #fffdf8;
+            border-color: #e2cda8;
+        }
+        :root[data-theme="caramel"] .theme-modal-bg {
+            background: rgba(70, 50, 30, 0.22);
+        }
+        :root[data-theme="caramel"] .ai-badge {
+            background: #f5e6c9;
+            color: #8c6b47;
+        }
+        :root[data-theme="caramel"] .ai-image-seq,
+        :root[data-theme="caramel"] .ai-image-quality {
+            background: rgba(105, 73, 39, 0.86);
+        }
+        :root[data-theme="caramel"] .ai-image-viewer {
+            background: rgba(67, 48, 30, 0.74);
+        }
+
+        /* 布朗尼：复古灰调可可、米棕与深巧克力棕 */
+        :root[data-theme="brownie"] body {
+            background:
+                radial-gradient(circle at 15% 10%, rgba(176, 142, 128, 0.22), transparent 32%),
+                linear-gradient(145deg, #f4ebe5 0%, #e7d8cf 50%, #d8c6bd 100%);
+            background-attachment: fixed;
+        }
+        :root[data-theme="brownie"] .num-card {
+            background: #faf3ee;
+            border-color: #c7b0a6;
+            color: #7a6056;
+        }
+        :root[data-theme="brownie"] .num-card.selected {
+            background: #dcc8bd;
+            border-color: #bda397;
+            color: #4c3b34;
+        }
+        :root[data-theme="brownie"] .num-card.sold {
+            background: #dbc9c0;
+            border-color: #cbb8ae;
+            color: #98847b;
+        }
+        :root[data-theme="brownie"] .btn-clear {
+            background: #f0e5df !important;
+            color: #6d584f !important;
+            border: 1px solid #ceb9af !important;
+        }
+        :root[data-theme="brownie"] .tab {
+            background: #e6d8d1;
+            color: #756159;
+            border: 1px solid transparent;
+        }
+        :root[data-theme="brownie"] .tab.active {
+            background: #78584d;
+            color: #fff9f5;
+            border-color: #62463d;
+            box-shadow: 0 2px 8px rgba(69, 50, 43, 0.22);
+        }
+        :root[data-theme="brownie"] .add-tab-btn {
+            background: #fff9f5;
+            color: #88665b;
+            border-color: #bda196;
+        }
+        :root[data-theme="brownie"] .sort-btn {
+            background: #dfd4cd;
+            color: #67574f;
+            border: 1px solid #c2b0a7;
+        }
+        :root[data-theme="brownie"] .ai-status {
+            background: #f1e5df;
+            border: 1px solid #d8c4ba;
+            color: #624c43;
+        }
+        :root[data-theme="brownie"] .ai-num {
+            background: #ecdfd8;
+            color: #74594e;
+            border: 1px solid #d5c1b7;
+        }
+        :root[data-theme="brownie"] .ai-num.warn {
+            background: #ead7d1;
+            color: #80564d;
+            border-color: #d5b9b1;
+        }
+        :root[data-theme="brownie"] .api-config,
+        :root[data-theme="brownie"] details.prompt-box,
+        :root[data-theme="brownie"] .ai-switch,
+        :root[data-theme="brownie"] .ai-trace-box,
+        :root[data-theme="brownie"] .ai-record-box,
+        :root[data-theme="brownie"] .ai-preview-card {
+            background: #fff9f5;
+            border-color: #c6afa4;
+        }
+        :root[data-theme="brownie"] .api-toggle,
+        :root[data-theme="brownie"] .mini-btn {
+            background: #f2e7e1;
+            border-color: #d2bdb3;
+            color: #6b564c;
+        }
+        :root[data-theme="brownie"] .customer-card.can-receive {
+            background: #f5e9e3;
+            border-color: #b99687;
+        }
+        :root[data-theme="brownie"] .tag {
+            background: #e9ded8;
+            color: #6b554b;
+            box-shadow: inset 0 0 0 1px #d7c5bc;
+        }
+        :root[data-theme="brownie"] .tag:hover {
+            background: #e1d4ce;
+        }
+        :root[data-theme="brownie"] .theme-option.active {
+            background: #f4e9e3;
+            border-color: #c4a89c;
+        }
+        :root[data-theme="brownie"] .theme-btn {
+            background: #fff9f5;
+            border-color: #ccb3a8;
+        }
+        :root[data-theme="brownie"] .theme-modal-bg {
+            background: rgba(57, 42, 37, 0.26);
+        }
+        :root[data-theme="brownie"] .ai-badge {
+            background: #e6d5cd;
+            color: #735a50;
+        }
+        :root[data-theme="brownie"] .ai-image-seq,
+        :root[data-theme="brownie"] .ai-image-quality {
+            background: rgba(72, 51, 44, 0.86);
+        }
+        :root[data-theme="brownie"] .ai-image-viewer {
+            background: rgba(44, 32, 28, 0.77);
+        }
+
         body { 
             font-family: -apple-system, sans-serif; 
             margin: 0; padding: 12px; 
@@ -200,6 +653,8 @@
             padding: 18px;
             width: 280px;
             max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
             box-shadow: 0 8px 30px rgba(0,0,0,0.2);
         }
         .theme-modal h4 { margin: 0 0 12px 0; color: var(--m-muted); font-size: 14px; }
@@ -416,6 +871,8 @@
 
         .ai-upload { border: 1.5px dashed var(--m-blue-main); background: var(--m-upload-bg); border-radius: 10px; padding: 14px; text-align: center; cursor: pointer; color: var(--m-blue-main); font-size: 13px; font-weight: bold; }
         .ai-image-list { display: flex; gap: 10px; overflow-x: auto; margin-top: 10px; padding-bottom: 3px; }
+        .ai-image-toolbar { display: none; justify-content: flex-end; margin-top: 6px; }
+        .ai-image-clear-btn { padding: 5px 10px; font-size: 10px; }
         .ai-image-item { position: relative; flex: 0 0 96px; width: 96px; }
         .ai-image-item img { width: 96px; height: 112px; object-fit: contain; background: var(--m-panel); border-radius: 8px; border: 1px solid var(--m-border); display: block; cursor: zoom-in; }
         .ai-image-remove { position: absolute; top: 3px; right: 3px; width: 18px; height: 18px; border-radius: 50%; border: none; background: var(--m-remove-bg); color: var(--m-on-accent); font-size: 10px; line-height: 18px; padding: 0; cursor: pointer; }
@@ -473,7 +930,9 @@
         .ai-conflict-box summary { cursor: pointer; font-weight: bold; }
         .ai-conflict-list { margin-top: 6px; display: grid; gap: 4px; }
         .ai-conflict-row { font-size: 12px; line-height: 1.4; }
-        .ai-image-seq { position: absolute; top: 3px; left: 3px; background: rgba(20,24,28,.78); color: #fff; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 6px; z-index: 1; }
+        .ai-image-top-tags { position: absolute; top: 3px; left: 3px; display: flex; align-items: center; gap: 3px; z-index: 1; }
+        .ai-image-seq { background: rgba(20,24,28,.78); color: #fff; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 6px; }
+        .ai-image-size-warning { background: var(--m-warn-bg); color: var(--m-warn-text); border: 1px solid var(--m-warn-border); font-size: 9px; font-weight: bold; padding: 1px 4px; border-radius: 5px; white-space: nowrap; }
         .ai-image-meta { margin-top: 4px; font-size: 9px; color: var(--m-soft); text-align: center; white-space: normal; line-height: 1.25; }
         .ai-image-meta span { display: block; overflow: hidden; text-overflow: ellipsis; }
         .ai-image-meta .low-quality { color: var(--m-warn-text); font-weight: bold; }
@@ -514,6 +973,9 @@
         <h4>🎨 切换主题</h4>
         <div class="theme-option" id="theme-cream" onclick="changeTheme('cream')">默认 <span>明亮柔和</span></div>
         <div class="theme-option" id="theme-dark" onclick="changeTheme('dark')">暗黑模式 <span>灰蓝深色</span></div>
+        <div class="theme-option" id="theme-pinkblue" onclick="changeTheme('pinkblue')">盐砂糖 <span>柔和粉蓝</span></div>
+        <div class="theme-option" id="theme-caramel" onclick="changeTheme('caramel')">焦糖布蕾 <span>奶黄暖棕</span></div>
+        <div class="theme-option" id="theme-brownie" onclick="changeTheme('brownie')">布朗尼 <span>暖米棕调</span></div>
         <button class="theme-close" onclick="closeThemeModal()">关闭</button>
     </div>
 </div>
@@ -570,7 +1032,7 @@
         <section class="public-grid-wrap">
             <div id="publicNumberGrid" class="public-grid"></div>
         </section>
-        <div class="public-footer">只读分享页 · 数据更新后请以商家重新发送的链接为准</div>
+        <div class="public-footer">只读分享页 · 数据更新后请以重新发送的链接为准</div>
     </main>
 </div>
 
@@ -697,6 +1159,9 @@
             </div>
             <input type="file" id="aiImageInput" class="ai-hide" accept="image/*" multiple onchange="addAiImageFiles(this.files)">
             <div id="aiImageList" class="ai-image-list"></div>
+            <div id="aiImageToolbar" class="ai-image-toolbar">
+                <button type="button" class="mini-btn ai-image-clear-btn" onclick="clearAiImages()">清空图片</button>
+            </div>
             <div class="ai-note">导入位置：<b id="aiTargetBatch">当前档位</b>。会自动跳过已占用编号；同一个编号被多人认领时，只算给聊天记录中时间更早的人。网页按“截图顺序 → 消息时间递增 → 截图内行号”排序，结果先预览，不会直接写入。</div>
             <div class="ai-actions">
                 <button class="btn-action" onclick="runAiImport()">开始识图</button>
@@ -743,7 +1208,6 @@
     let viewingAiImageIndex = -1;
     let lastNameTapIndex = -1;
     let lastNameTapAt = 0;
-    let publicShareData = null;
 
     const defaultAiPrompt = `【代理归属提取 v7】
 你是聊天记录截图的信息提取助手。括号里的名字是好友备注，必须忽略；只使用用户自己在群里显示的昵称。
@@ -786,7 +1250,11 @@
         const current = document.documentElement.dataset.theme;
         document.getElementById('theme-cream').classList.toggle('active', current === 'cream');
         document.getElementById('theme-dark').classList.toggle('active', current === 'dark');
-        document.getElementById('themeToggleBtn').textContent = current === 'dark' ? '🖤' : '🤍';
+        document.getElementById('theme-pinkblue').classList.toggle('active', current === 'pinkblue');
+        document.getElementById('theme-caramel').classList.toggle('active', current === 'caramel');
+        document.getElementById('theme-brownie').classList.toggle('active', current === 'brownie');
+        const themeIcons = { dark: '🖤', pinkblue: '🩵', caramel: '💛', brownie: '🤎' };
+        document.getElementById('themeToggleBtn').textContent = themeIcons[current] || '🤍';
     }
     function changeTheme(theme) {
         document.documentElement.dataset.theme = theme;
@@ -795,7 +1263,7 @@
         closeThemeModal();
     }
     const savedTheme = localStorage.getItem('kaki_theme');
-    changeTheme(savedTheme === 'dark' ? 'dark' : 'cream');
+    changeTheme(['dark', 'pinkblue', 'caramel', 'brownie'].includes(savedTheme) ? savedTheme : 'cream');
 
     function saveAiCfg() {
         aiCfg.endpoint = document.getElementById('aiEndpoint').value.trim();
@@ -1027,7 +1495,6 @@
     }
 
     function renderPublicView(data) {
-        publicShareData = data;
         document.body.classList.add('public-view-active');
         document.getElementById('publicBatchTitle').textContent = data.id;
         document.getElementById('publicTotalCount').textContent = data.total;
@@ -1235,7 +1702,7 @@
                 <div class="cust-header">
                     <div class="cust-title">
                         ${nameEditor}
-                        <span style="font-size:11px; background:var(--m-yellow-act); padding:1px 6px; border-radius:10px; margin-left:5px;">${c.nums.flat().length}张</span>
+                        <span class="cust-count-badge" style="font-size:11px; background:var(--m-yellow-act); padding:1px 6px; border-radius:10px; margin-left:5px;">${c.nums.flat().length}张</span>
                         <button class="copy-btn" onclick="event.stopPropagation(); copyCustomerNums(${cIdx})">复制成绩单</button>
                         <button class="sort-btn" onclick="event.stopPropagation(); sortCustomerNums(${cIdx})">排序</button>
                     </div>
@@ -1574,6 +2041,16 @@
         renderAiImages();
     }
 
+    function clearAiImages() {
+        if(!aiImages.length) return;
+        if(!confirm('确定清空所有导入图片吗？识别预览也会一起清空。')) return;
+        aiImages = [];
+        closeAiImageViewer();
+        clearAiPreview();
+        renderAiImages();
+        setAiStatus('已清空所有导入图片。');
+    }
+
     function moveAiImage(id, delta) {
         const index = aiImages.findIndex(item => item.id === id);
         const target = index + delta;
@@ -1600,10 +2077,13 @@
             const tooltip = [meta.size, meta.kb, qualityText].filter(Boolean).join(' · ');
             return `
             <div class="ai-image-item">
-                <span class="ai-image-seq">#${index + 1}</span>
+                <div class="ai-image-top-tags">
+                    <span class="ai-image-seq">#${index + 1}</span>
+                    ${meta.lowQuality ? '<span class="ai-image-size-warning">尺寸偏小</span>' : ''}
+                </div>
                 <img src="${item.dataUrl}" alt="${escapeAiHtml(item.name)}" title="点击放大查看" onclick="openAiImageViewer('${item.id}')">
                 <button class="ai-image-remove" onclick="removeAiImage('${item.id}')" aria-label="移除这张截图">✕</button>
-                ${meta.lowQuality || qualityText ? `<span class="ai-image-quality${meta.lowQuality ? ' low-quality' : ''}">${meta.lowQuality ? '尺寸偏小' : qualityText}</span>` : ''}
+                ${!meta.lowQuality && qualityText ? `<span class="ai-image-quality">${qualityText}</span>` : ''}
                 <div class="ai-image-meta" title="${escapeAiHtml(tooltip)}">
                     ${meta.size ? `<span class="${meta.lowQuality ? 'low-quality' : ''}">${meta.size}</span>` : ''}
                     ${meta.kb ? `<span>${meta.kb}</span>` : ''}
@@ -1614,6 +2094,8 @@
                 </div>
             </div>`;
         }).join('');
+        const toolbar = document.getElementById('aiImageToolbar');
+        if(toolbar) toolbar.style.display = aiImages.length ? 'flex' : 'none';
         if(viewingAiImageIndex >= aiImages.length) closeAiImageViewer();
     }
 
